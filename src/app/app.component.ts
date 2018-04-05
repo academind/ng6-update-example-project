@@ -9,6 +9,8 @@ import "rxjs/add/observable/throw";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/mergeMap";
 
+import { AlertService } from "./alert.service";
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -18,10 +20,14 @@ export class AppComponent implements OnInit {
   showContent = false;
   blogPosts: { title: string; body: string }[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private alertService: AlertService) {}
 
   onLoadContent() {
     this.showContent = true
+  }
+
+  onShowAlert() {
+    this.alertService.showAlert();
   }
 
   ngOnInit() {
