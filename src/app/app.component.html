@@ -1,7 +1,7 @@
 <h1>Angular 6 - What's New?</h1>
 <button (click)="onLoadContent()">Show Content</button>
 <button (click)="onShowAlert()">Show Alert</button>
-<template [ngIf]="showContent"> <!-- Kind of an alternative to <div *ngIf="..."> -->
+<ng-template [ngIf]="showContent"> <!-- Kind of an alternative to <div *ngIf="..."> -->
   <h3>The Blog Posts</h3>
   <div *ngFor="let post of blogPosts">{{ post.title }}</div>
-</template>
+</ng-template>
